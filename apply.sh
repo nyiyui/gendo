@@ -13,8 +13,8 @@ apply() {
 	tmpdir=$(mktemp -d --suffix=gen)
 	(
 		set -x
-		git clone $remote $tmpdir
-		./replace -config $config -dir $tmpdir
+		git clone "$remote" $tmpdir
+		./replace -config "$config" -dir $tmpdir
 		cd $tmpdir
 		git add .
 		git commit -m "$commit_message"

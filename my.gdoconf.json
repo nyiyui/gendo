@@ -4,6 +4,7 @@
 		"Mappings":[
 			{
 				"Slug": "CommonHeader",
+				"Comment": "{% include title.html %}",
 				"SourcePath": "./common-header.html",
 				"TargetGlob": "./_layouts/default.html"
 			}
@@ -14,8 +15,9 @@
 		"Mappings":[
 			{
 				"Slug": "CommonHeader",
+				"Comment": "MPM2DP-0A Summative",
 				"SourcePath": "./common-header.html",
-				"TargetGlob": "./summative/themes/xyi3/layouts/_default/single.html"
+				"TargetGlob": "./summative/themes/xyi3/layouts/_default/*.html"
 			}
 		]
 	}

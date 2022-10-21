@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"html/template"
 	"io"
 	"io/ioutil"
 	"log"
@@ -27,6 +28,11 @@ type Mapping struct {
 const startKeyF = "<!-- GENDO START %s -->"
 const endKeyF = "<!-- GENDO END %s -->"
 
+type TmplData struct {
+	Mapping Mapping
+	Path    string
+}
+
 func main() {
 	var root, configRaw string
 	var config Config
@@ -36,7 +42,8 @@ func main() {
 
 	err := json.Unmarshal([]byte(configRaw), &config)
 	if err != nil {
-		log.Fatal(err)
+		log.Printf("config raw:\n%s", configRaw)
+		log.Fatalf("json: %s", err)
 	}
 
 	for i, mapping := range config.Mappings {
@@ -54,7 +61,10 @@ func main() {
 		if err != nil {
 			log.Fatalf("mapping %d: %s", i, err)
 		}
-		log.Printf("mapping %d: %v", i, matches)
+		tmpl, err := template.New("").Parse(string(source))
+		if err != nil {
+			log.Fatalf("mapping %d: tmpl: %s", i, err)
+		}
 		for _, path := range matches {
 			dest := new(bytes.Buffer)
 			src, err := ioutil.ReadFile(path)
@@ -78,7 +88,13 @@ func main() {
 						log.Fatalf("mapping %d match %s: end key not found", i, path)
 					}
 					io.WriteString(dest, startKey)
-					dest.Write(source)
+					err = tmpl.Execute(dest, TmplData{
+						Mapping: mapping,
+						Path:    path,
+					})
+					if err != nil {
+						log.Fatalf("mapping %d match %s: tmpl: %s", i, path, err)
+					}
 					src2 = src2[endIndex:]
 				}
 			}
