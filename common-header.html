@@ -3,25 +3,28 @@
   <style>
   	#common-nav {
 			font-size: 16px;
-  		color: #ddd;
+  		color: #d0d0d0;
   		background-color: #222;
   		padding: 4px;
   	}
   	#common-nav a {
-  		color: #ddd;
+  		color: #d0d0d0;
   		text-decoration: none;
   		padding-right: 10px;
   	}
   	#common-nav a:hover {
   		text-decoration: underline;
   	}
+  	#common-nav .this {
+			color: #adadad;
+		}
   </style>
   <nav id="common-nav">
   	<a href="https://nyiyui.ca" style="color: #fa0;">Nyiyui</a>
 		{{ if ne .Mapping.Data.Self "qrystal" }}
 	  	<a href="https://nyiyui.ca/qrystal">Qrystal</a>
 		{{ end }}
-  	<span>
+  	<span class="this">
   		{{ .Mapping.Data.Title }}
   	</span>
   </nav>
