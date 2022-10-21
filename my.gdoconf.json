@@ -14,6 +14,20 @@
 		]
 	},
 	{
+		"Remote": "https://github.com/nyiyui/hugo-PaperMod",
+		"Mappings":[
+			{
+				"Slug": "CommonHeader",
+				"Data": {
+					"Title": "{{ site.Title }}",
+					"Self": "shibata"
+				},
+				"SourcePath": "./common-header.html",
+				"TargetGlob": "./layouts/partials/header.html"
+			}
+		]
+	},
+	{
 		"Remote": "https://github.com/nyiyui/mpm2dp-0a",
 		"Mappings":[
 			{
