@@ -6,10 +6,10 @@ import (
 	"flag"
 	"fmt"
 	"io"
-	"io/fs"
 	"io/ioutil"
 	"log"
 	"os"
+	"path/filepath"
 )
 
 type Config struct {
@@ -28,17 +28,13 @@ const startKeyF = "<!-- GENDO START %s -->"
 const endKeyF = "<!-- GENDO END %s -->"
 
 func main() {
-	var root, configPath string
+	var root, configRaw string
 	var config Config
 	flag.StringVar(&root, "dir", "", "root directory to start replacing")
-	flag.StringVar(&configPath, "config", "", "config file path")
+	flag.StringVar(&configRaw, "config", "", "raw config")
 	flag.Parse()
 
-	encoded, err := os.ReadFile(configPath)
-	if err != nil {
-		log.Fatal(err)
-	}
-	err = json.Unmarshal(encoded, &config)
+	err := json.Unmarshal([]byte(configRaw), &config)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -54,11 +50,11 @@ func main() {
 
 		startKey := fmt.Sprintf(startKeyF, mapping.Slug)
 		endKey := fmt.Sprintf(endKeyF, mapping.Slug)
-		dfs := os.DirFS(root)
-		matches, err := fs.Glob(dfs, mapping.TargetGlob)
+		matches, err := filepath.Glob(filepath.Join(root, mapping.TargetGlob))
 		if err != nil {
 			log.Fatalf("mapping %d: %s", i, err)
 		}
+		log.Printf("mapping %d: %v", i, matches)
 		for _, path := range matches {
 			dest := new(bytes.Buffer)
 			src, err := ioutil.ReadFile(path)

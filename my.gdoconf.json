@@ -1,0 +1,22 @@
+[
+	{
+		"Remote": "https://github.com/nyiyui/just-the-docs",
+		"Mappings":[
+			{
+				"Slug": "CommonHeader",
+				"SourcePath": "./common-header.html",
+				"TargetGlob": "./_layouts/default.html"
+			}
+		]
+	},
+	{
+		"Remote": "https://github.com/nyiyui/mpm2dp-0a",
+		"Mappings":[
+			{
+				"Slug": "CommonHeader",
+				"SourcePath": "./common-header.html",
+				"TargetGlob": "./summative/themes/xyi3/layouts/_default/single.html"
+			}
+		]
+	}
+]

@@ -9,7 +9,16 @@ fi
 apply() {
 	remote=$1
 	config=$2
+	commit_message=$3
 	tmpdir=$(mktemp -d --suffix=gen)
-	git clone $remote $tmpdir
-	./replace -config $config -dir $tmpdit
+	(
+		set -x
+		git clone $remote $tmpdir
+		./replace -config $config -dir $tmpdir
+		cd $tmpdir
+		git add .
+		git commit -m "$commit_message"
+		git push
+	)
+	rm -rf $tmpdir
 }

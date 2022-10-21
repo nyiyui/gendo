@@ -1,9 +1,0 @@
-{
-	"Mappings":[
-		{
-			"Slug": "EXAMPLE",
-			"Source": "replaced",
-			"TargetGlob": "./*.txt"
-		}
-	]
-}
