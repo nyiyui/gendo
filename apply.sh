@@ -10,10 +10,10 @@ apply() {
 	remote=$1
 	config=$2
 	commit_message=$3
+	1>&2 echo "=== $remote"
 	tmpdir=$(mktemp -d --suffix=gen)
 	(
-		set -x
-		git clone "$remote" $tmpdir
+		git clone --quiet "$remote" $tmpdir
 		./replace -config "$config" -dir $tmpdir
 		cd $tmpdir
 		git add .
