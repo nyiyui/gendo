@@ -20,6 +20,7 @@ type Config struct {
 type Mapping struct {
 	Slug       string
 	Comment    string
+	Data       map[string]string
 	Source     string
 	SourcePath string
 	TargetGlob string

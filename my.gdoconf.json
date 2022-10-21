@@ -4,7 +4,10 @@
 		"Mappings":[
 			{
 				"Slug": "CommonHeader",
-				"Comment": "{% include title.html %}",
+				"Data": {
+					"Title": "{{ site.title }}",
+					"Self": "qrystal"
+				},
 				"SourcePath": "./common-header.html",
 				"TargetGlob": "./_layouts/default.html"
 			}
@@ -15,7 +18,10 @@
 		"Mappings":[
 			{
 				"Slug": "CommonHeader",
-				"Comment": "MPM2DP-0A Summative",
+				"Data": {
+					"Title": "MPM2DP-0A Summative",
+					"Self": "mpm2dp-0a"
+				},
 				"SourcePath": "./common-header.html",
 				"TargetGlob": "./summative/themes/xyi3/layouts/_default/*.html"
 			}
