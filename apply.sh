@@ -18,7 +18,7 @@ apply() {
 		cd $tmpdir
 		git add .
 		git commit -m "$commit_message"
-		git push
+		git push --quiet
 	)
 	rm -rf $tmpdir
 }

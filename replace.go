@@ -103,7 +103,6 @@ func main() {
 			if err != nil {
 				log.Fatalf("mapping %d match %s: %s", i, path, err)
 			}
-			log.Printf("mapping %d match %s", i, path)
 		}
 	}
 }

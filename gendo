@@ -12,5 +12,7 @@ for row in $(echo $config | jq -r '.[] | @base64'); do
 	row=$(echo $row | base64 --decode)
 	remote=$(echo $row | jq -r '.Remote')
 	config=$row
-  apply "$remote" "$config" "$commit_message"
+  apply "$remote" "$config" "$commit_message" &
 done
+
+wait
