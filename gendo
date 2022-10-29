@@ -4,13 +4,18 @@ source ./apply.sh
 
 config_path=$1
 
-config=$(cat $config_path)
+if [[ -z "$config_path" ]]; then
+	1>&2 echo 'gendo CONFIG_PATH'
+	exit 1
+fi
+
+config=$(cat "$config_path")
 
 commit_message="converge common-header"
 
-for row in $(echo $config | jq -r '.[] | @base64'); do
+for row in $(echo "$config" | jq -r '.[] | @base64'); do
 	row=$(echo $row | base64 --decode)
-	remote=$(echo $row | jq -r '.Remote')
+	remote=$(echo "$row" | jq -r '.Remote')
 	config=$row
   apply "$remote" "$config" "$commit_message" &
 done
