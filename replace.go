@@ -1,3 +1,7 @@
+// Gendo replicates common code across Git repos.
+// Copyright (C) 2022  Ken Shibata <+@nyiyui.ca>
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 package main
 
 import (

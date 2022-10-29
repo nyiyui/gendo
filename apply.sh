@@ -1,4 +1,8 @@
 #!/bin/bash
+# Gendo replicates common code across Git repos.
+# Copyright (C) 2022  Ken Shibata <+@nyiyui.ca>
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 if [ "${BASH_SOURCE[0]}" -ef "$0" ]
 then
