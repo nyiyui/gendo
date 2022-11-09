@@ -13,7 +13,7 @@
     }
     #common-nav-inner {
       margin: auto;
-      max-width: 70rem;
+      max-width: 900px;
       font-size: 16px;
       font-family: 'Zen Kaku Gothic New', sans-serif;
       color: #d0d0d0;
@@ -34,11 +34,14 @@
   <nav id="common-nav">
     <div id="common-nav-inner">
       <a href="https://nyiyui.ca" style="color: #ff6bdf;">
-        <img src="https://cdn.nyiyui.ca/one.svg" style="height: 1.8rem; display: inline; vertical-align: middle;" />
+        <img src="https://cdn.nyiyui.ca/one.svg" style="height: 27px; display: inline; vertical-align: middle;" />
         Nyiyui
       </a>
       {{ if ne .Mapping.Data.Self "qrystal" }}
         <a href="https://nyiyui.ca/qrystal">Qrystal</a>
+      {{ end }}
+      {{ if ne .Mapping.Data.Self "kyii" }}
+        <a href="https://nyiyui.ca/kyii">Kyii</a>
       {{ end }}
       <span class="this">
         {{ .Mapping.Data.Title }}
