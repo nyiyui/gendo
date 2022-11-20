@@ -32,5 +32,19 @@
 				"TargetGlob": "./static/*/*.html"
 			}
 		]
+	},
+	{
+		"Remote": "https://github.com/wlmac/scavenger",
+		"Mappings":[
+			{
+				"Slug": "CommonHeader",
+				"Data": {
+					"Title": "Scavenger Hunt (2022)",
+					"Self": "scavenger2022"
+				},
+				"SourcePath": "./metropolis-header.html",
+				"TargetGlob": "./scavenger2022/core/templates/core/base.html"
+			}
+		]
 	}
 ]
