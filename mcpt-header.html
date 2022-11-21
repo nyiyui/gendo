@@ -9,7 +9,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
     #common-nav {
-      background: #222;
+      background: #073763;
     }
     #common-nav-inner {
       margin: auto;
@@ -33,15 +33,18 @@
   </style>
   <nav id="common-nav">
     <div id="common-nav-inner">
-      <a href="https://nyiyui.ca" style="color: #ff6bdf;">
-        <img src="https://cdn.nyiyui.ca/one.svg" style="height: 27px; display: inline; vertical-align: middle;" alt="logo" />
-        Nyiyui
+      <a href="https://mcpt.ca" style="color: #fff;">
+        <img src="https://mcpt.ca/logo.svg" style="height: 21px; display: inline; vertical-align: middle;" alt="MCPT logo" />
+        MCPT
       </a>
-      {{ if ne .Mapping.Data.Self "qrystal" }}
-        <a href="https://nyiyui.ca/qrystal">Qrystal</a>
+      {{ if ne .Mapping.Data.Self "wlmoj" }}
+        <a href="https://mcpt.ca">OJ</a>
       {{ end }}
-      {{ if ne .Mapping.Data.Self "kyii" }}
-        <a href="https://nyiyui.ca/kyii">Kyii</a>
+      {{ if ne .Mapping.Data.Self "ctf" }}
+        <a href="https://ctf.mcpt.ca">CTF</a>
+      {{ end }}
+      {{ if ne .Mapping.Data.Self "learning" }}
+        <a href="https://learning.mcpt.ca">Learning</a>
       {{ end }}
       <span class="this">
         {{ .Mapping.Data.Title }}
