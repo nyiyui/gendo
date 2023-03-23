@@ -14,8 +14,9 @@
     #common-nav-inner {
       margin: auto;
       max-width: 900px;
-      font-size: 16px;
+      font-size: 1rem;
       font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 400;
       color: #d0d0d0;
       padding: 4px;
     }
@@ -37,7 +38,7 @@
         <img src="https://maclyonsden.com/static/core/img/themes/logos/dark-transparent.png" style="height: 27px; display: inline; vertical-align: middle;" alt="Metropolis logo" />
         Metropolis
       </a>
-      {{ if ne .Mapping.Data.Self "metropolis-jekyll" }}
+      {{ if and (ne .Mapping.Data.Self "metropolis-jekyll") (ne .Mapping.Data.Self "scavenger2022") }}
         <a href="https://docs.maclyonsden.com">Docs</a>
       {{ end }}
       {{ if ne .Mapping.Data.Self "doodle" }}
