@@ -20,6 +20,34 @@
 		]
 	},
 	{
+		"Remote": "https://github.com/nyiyui/hato",
+		"Mappings":[
+			{
+				"Slug": "CommonHeader",
+				"Data": {
+					"Title": "HATO",
+					"Self": "hato"
+				},
+				"SourcePath": "./common-header.html",
+				"TargetGlob": "./*.html"
+			}
+		]
+	},
+	{
+		"Remote": "https://github.com/nyiyui/hato-just-the-docs",
+		"Mappings":[
+			{
+				"Slug": "CommonHeader",
+				"Data": {
+					"Title": "{{ site.title }}",
+					"Self": "hato"
+				},
+				"SourcePath": "./common-header.html",
+				"TargetGlob": "./_layouts/default.html"
+			}
+		]
+	},
+	{
 		"Remote": "https://github.com/nyiyui/hugo-PaperMod",
 		"Mappings":[
 			{
