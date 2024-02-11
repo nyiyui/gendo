@@ -20,6 +20,7 @@ apply() {
 		git clone --quiet "$remote" $tmpdir
 		./replace -config "$config" -dir $tmpdir
 		cd $tmpdir
+    cat ./layouts/_default.html
 		git add .
 		git commit -m "$commit_message"
 		git push --quiet
