@@ -76,30 +76,16 @@
 		]
 	},
 	{
-		"Remote": "https://github.com/nyiyui/mpm2dp-0a",
+		"Remote": "https://github.com/nyiyui/hm_inference_example",
 		"Mappings":[
 			{
 				"Slug": "CommonHeader",
 				"Data": {
-					"Title": "MPM2DP-0A Summative",
-					"Self": "mpm2dp-0a"
+					"Title": "Hindley-Milner Type Inference Example",
+					"Self": "hm_inference_example"
 				},
 				"SourcePath": "./common-header.html",
-				"TargetGlob": "./summative/themes/xyi3/layouts/_default/*.html"
-			}
-		]
-	},
-	{
-		"Remote": "https://github.com/nyiyui/youfolio",
-		"Mappings":[
-			{
-				"Slug": "CommonHeader",
-				"Data": {
-					"Title": "The Youfolio",
-					"Self": "youfolio"
-				},
-				"SourcePath": "./common-header.html",
-				"TargetGlob": "./theme/header.hbs"
+				"TargetGlob": "./index.html"
 			}
 		]
 	}
